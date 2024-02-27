@@ -1,28 +1,41 @@
-<!--
- * @Author: qianhua.xiong
--->
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-   
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <a-config-provider
+    :theme="{
+      algorithm: theme.darkAlgorithm,
+      components: {
+        Radio: {
+          colorPrimary: '#00b96b',
+        },
+      },
+      token: {
+          colorPrimary: '#1890ff',
+      },
+    }"
+    :locale="locale"
+  >
+    <ErrorBoundary>
+      <RouterView />
+    </ErrorBoundary>  
+  </a-config-provider>
 </template>
-
+<script setup lang="ts">
+import {ref} from 'vue';
+//边缘错误
+import ErrorBoundary from '@/components/ErrorBoundary.vue';
+//menu
+import Menu from '../src/views/menu/index.vue';
+//定制主题
+import { theme } from 'ant-design-vue';
+// const { darkAlgorithm, compactAlgorithm } = theme;
+// const { useToken } = theme;
+// const { token } = useToken();
+//国际化  
+import zhCN from 'ant-design-vue/es/locale/zh_CN';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+dayjs.locale('zh-cn');
+const locale = ref(zhCN);
+</script>
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
