@@ -2,7 +2,8 @@
  * @Author: qianhua.xiong
 -->
 <template>
-    <a-form
+    <div id="loginPage" :style="STYLE">
+      <a-form
       :model="formState"
       name="center"
       :label-col="{ span: 8 }"
@@ -35,12 +36,24 @@
         <a-button type="primary" style="width:20vw"  html-type="submit">登录</a-button>
       </a-form-item>
     </a-form>
+    </div>
   </template>
   <script lang="ts" setup>
-  import { reactive } from 'vue';
+  import { reactive ,ref} from 'vue';
   import { useRouter} from 'vue-router';
   let router = useRouter();
-
+  const STYLE = ref({
+    position: 'fixed',
+    left: 0,
+    top:0, 
+    zIndex: 9999, 
+    width: '100vw',
+    height:'100vh',
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    backgroundColor: "#242424"
+  })
   interface FormState {
     username: string;
     password: string;

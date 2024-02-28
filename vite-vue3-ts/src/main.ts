@@ -7,5 +7,11 @@ import App from './App.vue';
 import router from '@/router/index';
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
+import * as Icons from '@ant-design/icons-vue'
+const app = createApp(App)
 
-createApp(App).use(router).use(Antd).mount('#app')
+// 注册图标组件
+for (const i in Icons) {
+    app.component(i, Icons[i])
+  }
+app.use(router).use(Antd).mount('#app')

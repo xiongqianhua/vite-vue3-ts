@@ -14,7 +14,7 @@
     :locale="locale"
   >
     <ErrorBoundary>
-      <RouterView />
+      <Menu/>
     </ErrorBoundary>  
   </a-config-provider>
 </template>
