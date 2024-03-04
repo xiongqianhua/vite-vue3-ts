@@ -1,0 +1,10 @@
+$font-color-gray:rgb(147,147,147);
+.box{
+    display:flex;
+    width: 100%;
+    .item{
+      width:40vw;
+      height:10vw;
+      border:1px solid #fff
+    }
+  }

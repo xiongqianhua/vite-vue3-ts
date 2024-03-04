@@ -1,3 +1,6 @@
+<!--
+ * @Author: qianhua.xiong
+-->
 <template>
   <div style="padding: 30px">
     <a-row :gutter="16">
@@ -34,9 +37,17 @@
         </a-card>
       </a-col>
     </a-row>
+    <div class="box">
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons-vue';
 </script>
+<style lang="sass" scoped>
+@import '@/assets/styles/global.scss'
+</style>
+
 
