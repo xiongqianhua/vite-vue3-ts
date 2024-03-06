@@ -6,3 +6,5 @@ node版本16
 ### 组件库
 antd组件库：
 https://antdv.com/components/overview-cn
+
+详细步骤说明https://juejin.cn/post/7342147418287603724
